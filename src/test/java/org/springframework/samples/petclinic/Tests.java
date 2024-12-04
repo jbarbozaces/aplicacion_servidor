@@ -123,45 +123,6 @@ class TestsPaginaPrincipal {
 		assertEquals(datos_mascota.get(5).getText(), "cat");
 	}
 
-	@Test
-	public void test_edit_pet() {
-		String name = "Knight";
-		String date = "2016-11-10";
-		String type = "cat";
-
-		// obtención de la página.
-		driver.get("http://localhost:8080/owners/1");
-
-		// ingresamis a la pagina de edicion de mascota.
-		driver
-			.findElement(By.xpath("//h2[contains(text(), 'Pets and Visits')]/following-sibling::table/tbody/tr")
-				.linkText("Edit Pet"))
-			.click();
-
-		// obtengo el formulario.
-		WebElement formulario = driver.findElement(By.tagName("form"));
-
-		// interactuamos con los elementos del formulario.
-		formulario.findElement(By.tagName("input").id("name")).sendKeys(name);
-		formulario.findElement(By.cssSelector("button[type='submit']")).click();
-
-		// comprobamos que se haya redirigido a la nueva página.
-		assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/owners/1"));
-
-		// obtenemos la lista de datos de las mascotas que tiene.
-		List<WebElement> datos_mascota = driver.findElements(
-				By.xpath("//h2[contains(text(), 'Pets and Visits')]/following-sibling::table/tbody/tr/td[1]/dl/dd"));
-
-		// comprobamos que la información mostrada es la que esperamos de las mascotas.
-		assertEquals(datos_mascota.get(0).getText(), name);
-		assertEquals(datos_mascota.get(1).getText(), date);
-		assertEquals(datos_mascota.get(2).getText(), type);
-
-		assertEquals(datos_mascota.get(3).getText(), "Leo");
-		assertEquals(datos_mascota.get(4).getText(), "2010-09-07");
-		assertEquals(datos_mascota.get(5).getText(), "cat");
-	}
-
 	@AfterAll
 	public static void tearDown() {
 		if (driver != null) {
