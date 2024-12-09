@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestsPaginaPrincipal
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.236 s - in TestsPaginaPrincipal
+Tests run: 4, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 5.544 s <<< FAILURE! - in TestsPaginaPrincipal
+test_find_owner_correcto  Time elapsed: 0.607 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Gladiator> but was: <Leo>
+	at TestsPaginaPrincipal.test_find_owner_correcto(Tests.java:66)
+
+test_edit_pet  Time elapsed: 0.35 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Gladiator> but was: <Knight>
+	at TestsPaginaPrincipal.test_edit_pet(Tests.java:156)
+
+test_new_pet  Time elapsed: 0.639 s  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at TestsPaginaPrincipal.test_new_pet(Tests.java:117)
+
