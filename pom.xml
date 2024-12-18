@@ -72,6 +72,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+	  
+    <dependency>
+      <groupId>org.sonarsource.scanner.lib</groupId>
+      <artifactId>sonar-scanner-java-library</artifactId>
+      <version>3.1.1.261</version>
+    </dependency>
 
     <!-- Databases - Uses H2 by default -->
     <dependency>
